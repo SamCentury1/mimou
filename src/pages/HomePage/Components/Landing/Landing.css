@@ -1,0 +1,101 @@
+.landing-item {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    position: relative;
+    /* background-image: url("../../../../img/mimou-bg-1.png"); */
+}
+
+.landing-item-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+
+}
+
+.landing-item-text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-item-text {
+    font-size: clamp(2rem, 5.5vw, 6rem); 
+    color: rgb(233, 229, 229);
+    font-family: 'Abel', sans-serif;
+
+}
+
+.landing-item-subtext {
+    font-size: clamp(0.5rem, 2.5vw, 2.5rem); 
+    color: rgb(233, 229, 229);
+    font-family: 'Abel', sans-serif;
+    
+}
+
+
+.landing-btn-container {
+    width: 65%;
+    height:50px;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.landing-btn {
+    width: 35%;
+    height: 100%;
+    border:2px solid #f81ce5;
+    /* border-radius: 5px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    position: relative;
+    font-weight: 100;
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 5px );
+    border-radius: 10px;
+    /* border: 1px solid rgba( 255, 255, 255, 0.1 ); */
+    box-shadow: 
+        0 0 5px rgba(226, 226, 226, 0.37),
+        0 8px 32px 0 rgba(226, 226, 226, 0.37);
+}
+
+/************** SMALL SCREEN *************/
+
+@media screen and (max-width: 800px) {
+    .landing-item {
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        position: relative;
+        background-image: none;
+    }
+
+    
+}

@@ -1,0 +1,13 @@
+.testimonials-item {
+    width: 100%;
+    height: 60vh; 
+    background-color: cadetblue;
+}
+
+
+
+/************** SMALL SCREEN *************/
+
+@media screen and (max-width: 800px) {
+
+}
