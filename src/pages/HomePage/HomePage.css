@@ -10,22 +10,7 @@
     align-items: center;
 }
 
-.bg-image {
-    width: 100%;
-    height: 100vh;
-    background-color: transparent;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position-x: center;
-    background-position-y: center;
-    position: fixed;
-    background-image: url("../../img/mimou-bg-1.png");
-    z-index: -1;
-}
+
 
 .component-container {
     background-color: black;

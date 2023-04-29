@@ -1,5 +1,15 @@
-.mission-item {
+.mission-container {
     width: 100%;
+    height: 80vh;
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+.mission-item {
+    width: 80%;
+    margin: auto;
     height: 80vh; 
     display:flex;
     flex-direction: row;
@@ -8,20 +18,46 @@
 }
 
 .mission-item-picture-container {
-    width: 30%;
+    width: 40%;
     height: 80%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
     position: relative;
-    background-image: url("../../../../img/mimou-serious.png");
+
+
+}
+
+.mission-item-picture-image {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    /* background-image: url("../../../../img/mimou-serious.png"); */
+    background-image: url("../../../../img/mimou_5.svg");
+    z-index:10
+
+}
+
+.mission-item-picture-shape {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    background-position-y: center;
+    position: absolute;
+    background-image: url("../../../../img/shape5.svg");
 }
 
 .mission-item-text-container {
     width: 60%;
     height: 80%;
-    border:1px solid #f81ce5;
+    /* border:1px solid #f81ce5; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -30,11 +66,11 @@
 
 .mission-item-text-header {
     height:20%;
-    font-size: clamp(2rem, 5.5vw, 3rem);
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
     color: rgb(196, 196, 196);
 }
 .mission-item-text-body {
-    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: rgb(196, 196, 196);
     width: 95%;
 }
@@ -46,9 +82,20 @@
 /************** SMALL SCREEN *************/
 
 @media screen and (max-width: 800px) {
+
+    .mission-container {
+            width: 100%;
+            height: 80vh;
+            background-color: transparent !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        
+        
+    }
     .mission-item {
         width: 100%;
-        height: 100vh; 
+        height: 100%; 
         display:flex;
         flex-direction: row;
         justify-content: space-evenly;

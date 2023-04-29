@@ -1,3 +1,38 @@
+.landing-container {
+    width: 100%;
+    height: 150vh;
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
+    position: relative;
+    /* background-image: url("../../../../img/mimou-bg-1.png"); */
+}
+
+.bg-image {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y:center;
+    position: fixed;
+    background-image: url("../../../../img/mimou-bg-1.png");
+    z-index: -1;
+    overflow: hidden;
+}
+
+
 .landing-item {
     width: 100%;
     height: 100vh;
@@ -97,5 +132,72 @@
         background-image: none;
     }
 
+    .landing-btn-container {
+        width: 65%;
+        height:200px;
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
     
+    .landing-btn {
+        width: 100%;
+        height: 40%;
+        border:2px solid #f81ce5;
+        /* border-radius: 5px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        color: white;
+        position: relative;
+        font-weight: 100;
+        background: rgba( 255, 255, 255, 0.2 );
+        backdrop-filter: blur( 5px );
+        -webkit-backdrop-filter: blur( 5px );
+        border-radius: 10px;
+        /* border: 1px solid rgba( 255, 255, 255, 0.1 ); */
+        box-shadow: 
+            0 0 5px rgba(226, 226, 226, 0.37),
+            0 8px 32px 0 rgba(226, 226, 226, 0.37);
+    }
+
+    .bg-image {
+        width: 100%;
+        height: 100vh;
+        background-color: transparent;
+        /* display: flex; */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-x: center;
+        background-position-y:center;
+        position: fixed;
+        background-image: url("../../../../img/mimou-bg-1.png");
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .landing-item-text-container {
+        top:-20%
+    }
+
+    .landing-item-text {
+        font-size: clamp(3rem, 5.5vw, 4rem); 
+        color: rgb(233, 229, 229);
+        font-family: 'Abel', sans-serif;
+    
+    }
+    
+    .landing-item-subtext {
+        font-size: clamp(1rem, 2.5vw, 2rem); 
+        color: rgb(233, 229, 229);
+        font-family: 'Abel', sans-serif;
+        
+    }
 }

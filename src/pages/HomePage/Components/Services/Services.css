@@ -1,22 +1,30 @@
-.services-item {
+.services-container {
     width: 100%;
-    height: 80vh; 
+    height: 200vh; 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.services-item {
+    width: 80%;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
     position: relative;
-    background-image: url("../../../../img/montreal-skyline.png");
+    /* background-image: url("../../../../img/montreal-skyline.png"); */
 }
 .services-item-item-container {
-    width: 60%;
-    height: 90%;
-    border: 1px solid #f81ce5;
+    height: 25%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
@@ -28,22 +36,55 @@
 }
 
 .services-item-item-element {
-    height: 25%;
-    width: 99%;
+    height: 100%;
+    width: 60%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 
     position: relative;
     font-weight: 100;
     background: rgba(211, 205, 205, 0.2);
-    backdrop-filter: blur( 13px );
-    -webkit-backdrop-filter: blur( 13px );
+    backdrop-filter: blur( 5px );
+    -webkit-backdrop-filter: blur( 10px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.1 );
     box-shadow: 
         0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+}
+.services-item-item-element-image {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    position: relative;
+    /* border: 1px solid #f81ce5; */
+}
+.img-1 {
+    background-image: url("../../../../img/mimou_8.svg");
+}
+.img-2 {
+    background-image: url("../../../../img/mimou_6.svg");
+}
+.img-3 {
+    background-image: url("../../../../img/mimou_7.svg");
+}
+
+.services-item-item-element-header {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height:25%;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .services-item-item-element-icon-container {
@@ -59,16 +100,6 @@
     color: #cebfdb;
     font-size: clamp(2rem, 5.5vw, 3em);
 }
-
-.services-item-item-element-body {
-    width: 80%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
 .services-item-item-element-body-header {
     width: 95%;
     height: 50%;
@@ -81,6 +112,9 @@
     align-items: flex-start;
 }
 
+
+
+
 .services-item-item-element-body-separator {
     height: 20%;
     width: 100%;
@@ -89,11 +123,21 @@
     justify-content: center;
     align-items: center;
 }
+.services-item-item-element-body {
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 
 .services-item-item-element-body-text {
     width: 95%;
-    height: 30%;
-    font-size: clamp(0.5rem, 5.5vw, 1em); 
+    height: 70%;
+    font-size: clamp(1rem, 5.5vw, 1.5em); 
     color: rgb(233, 229, 229);
     font-family: 'Abel', sans-serif;
     display: flex;
@@ -103,10 +147,109 @@
     text-align: left;
 }
 
+.services-item-learnmore-container {
+    height: 30%;
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+.services-item-learnmore-button {
+    height: 95%;
+    width: 20%;
+    border: 1px solid rgb(233, 229, 229);
+    font-size: clamp(0.8rem, 5.5vw, 1.2em); 
+    color: rgb(233, 229, 229);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
 
 
 /************** SMALL SCREEN *************/
 
 @media screen and (max-width: 800px) {
+    .services-container {
+        width: 100%;
+        height:200vh; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
 
+    .services-item {
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-size: cover;
+        background-position-x: center;
+        background-position-y: center;
+        position: relative;
+        /* background-image: url("../../../../img/montreal-skyline.png"); */
+    }
+
+    .services-item-item-container {
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .services-item-item-element-image {
+        display: none;
+        /* border: 1px solid #f81ce5; */
+    }
+
+    .services-item-item-element {
+        height: 100%;
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .services-item-item-element-header {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        /* flex-direction: column; */
+    }
+
+    .services-item-item-element-body {
+        flex-direction: column;
+        /* flex-direction: column; */
+    }
+
+    .services-item-item-element-body-header {
+        align-items: center;
+        justify-content: center;
+        /* flex-direction: column; */
+    }
+
+    .services-item-learnmore-container {
+        height: 30%;
+    
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .services-item-learnmore-button {
+
+        width: 50%;
+
+    }
 }

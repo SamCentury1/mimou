@@ -4,7 +4,7 @@ import "./HomePage.css"
 
 
 // components
-import Separator from './Components/Separator/Separator'
+
 
 import Landing from './Components/Landing/Landing';
 import Description from './Components/Description/Description';
@@ -21,62 +21,29 @@ const HomePage = () => {
 
 
 
-    // const control = useAnimation()
-    // const [ref, inView] = useInView()
-
-
-
-
-    // useEffect(() => {
-    //     if (inView) {
-    //       control.start("visible");
-    //       console.log(inView)
-    //     } else if (!inView) {
-    //         control.start("hidden");
-    //         console.log(inView)
-    //       } 
-    //   }, [control, inView]);
-    // const {scrollYProgress} = useScroll({
-    //     target: targetRef,
-    //     offset: ["end end", "end start"]
-    // })
-
-    // const opacity = useTransform(scrollYProgress, [0, 0.5], [1,0])
-    // const scale = useTransform(scrollYProgress, [0, 0.5], [1,0.8])
 
     return (
         <div>
-            <div className='bg-image'></div>
+
 
                 <Landing />
-                <Separator/>
-                <div className='component-container'>
 
-                    <Description/>
-                    <Separator/>
 
-                    <div className='item-title'>Mission</div>
-                    <Mission />
-                    <Separator/>
+                <Description/>
 
-                    <div className='item-title'>Core Values</div>
-                    <Values />
-                    <Separator/>
+                <Mission />
 
-                    <div className='item-title'>Services</div>
-                    <Services />
-                    <Separator/>
+                <Values />
 
-                    <div className='item-title'>Testimonials</div>
-                    <Testimonials />
-                    <Separator/>
+                <Services />
 
-                    <div className='item-title'>Contact Us</div>
-                    <Contact />
-                    <Separator/>
+                <Testimonials />
 
-                    <Footer />
-                </div>
+                <Contact />
+
+
+                <Footer />
+
         </div>
     )
 }

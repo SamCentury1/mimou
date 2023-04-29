@@ -1,21 +1,28 @@
 import React, { useEffect, useRef, useState } from 'react'
 import {motion} from 'framer-motion'
+import Separator from '../Separator/Separator'
 
 import "./Landing.css"
+
+import MimouLogoWhite from '../../../../img/mimoulogo_white.png'
 
 const Landing = () => {
 
     const variants = {
-        visible: { opacity: 1, y:'100%'},
+        visible: { opacity: 1, y:'50%'},
         hidden: { opacity: 0, y:500 },
     }
 
 
     const myRef = useRef();
-    const parentRef = useRef()
+    const parentRef = useRef();
+    const bgImageRef = useRef();
+    const containerRef = useRef()
 
 
     const [scale,setScale] = useState()
+    const [bgImageOpacity,setBgImageOpacity] = useState()
+    // const [showBgImage,setShowBgImage] = useState('fixed')
 
     const getPosition = () => {
 
@@ -25,7 +32,11 @@ const Landing = () => {
 
         const parentHeight = parentRef.current.offsetHeight
 
-        return {height,parentHeight}
+        const bgImageHeight = bgImageRef.current.offsetHeight
+
+        const containerHeight = containerRef.current.offsetHeight
+
+        return {height,parentHeight,bgImageHeight,containerHeight}
 
     };
 
@@ -38,29 +49,48 @@ const Landing = () => {
             const targetElemCenter = parentContainerCenter + (data.height)
             const distanceBetweentargetCenterAndContainerCenter = targetElemCenter - parentContainerCenter
 
-
-            // console.log(window.pageYOffset)
             if (window.pageYOffset < parentContainerCenter) {
                 setScale(1)
+                setBgImageOpacity(1)
+
             } else {
-                const scale = Math.abs((window.pageYOffset-targetElemCenter) / distanceBetweentargetCenterAndContainerCenter)
-                setScale(scale)
+                const scale = ((window.pageYOffset-targetElemCenter) / distanceBetweentargetCenterAndContainerCenter)
+
+                setScale(scale*-1)
+                setBgImageOpacity(scale*-1)
+
+                if (window.pageYOffset >  data.bgImageHeight) {
+                    setScale(0)
+                }
+
+                if (scale*-1 < 0) {
+                    // setShowBgImage(0)
+                    setBgImageOpacity(0)
+                }
+
+           
             }
         })
     }, []);
 
 
-
     return (
+        <div className='landing-container' ref={containerRef}>
+            <motion.div 
+                className='bg-image' 
+                ref={bgImageRef}
+                style={{opacity:bgImageOpacity, }}
+
+            ></motion.div>
             <div className='landing-item'  ref={parentRef}>
-                <div className='landing-item-overlay'></div>
+                
                 <motion.div
                     className='landing-item-text-container'
                     variants={variants}
                     initial="hidden"
                     animate={"visible"}
                     transition={{ duration: 0.6, delay:0.3}}
-                    whileInView={{opacity:1}}
+                    whileInView={{opacity:1, display:'flex'}}
                     ref={myRef}
                     style={{scale:scale, opacity:0}}
                 >
@@ -70,7 +100,7 @@ const Landing = () => {
                         animate={{opacity:1}}
                         transition={{ duration: 0.6, delay:0.6}} 
                     >
-                        Mimou Security Services
+                        Mimou Feline Services
                     </motion.div>
 
                     <motion.div 
@@ -79,8 +109,12 @@ const Landing = () => {
                         animate={{opacity:1}}
                         transition={{ duration: 0.6, delay:0.9}} 
                     >
-                        Committed to protecting your home and community
+                        Committed to providing house cat services
                     </motion.div>
+
+                    <div className='landing-logo-container'>
+                        <img src={MimouLogoWhite} width={100} height ={100} alt="" />
+                    </div>
 
                     <div className='landing-btn-container'>
                         <motion.div 
@@ -100,6 +134,8 @@ const Landing = () => {
                 </motion.div>
 
             </div>
+            <Separator/>
+        </div>
         )
 }
 
