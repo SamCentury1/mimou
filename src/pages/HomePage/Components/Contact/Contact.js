@@ -21,19 +21,19 @@ const Contact = () => {
                     <div className='contact-form-body-container'>
                         <div className='contact-form-body-inputs-container'>
                             <div className='contact-form-body-input-container'>
-                                <label htmlFor='' className='contact-form-label'>name</label>
+                                <label htmlFor='' className='contact-form-label'>Name</label>
                                 <input className='contact-form-input' type='text' />
                             </div>
                             <div className='contact-form-body-input-container'>
-                                <label htmlFor='' className='contact-form-label'>email</label>
+                                <label htmlFor='' className='contact-form-label'>Email</label>
                                 <input className='contact-form-input' type='text' />
                             </div>
                             <div className='contact-form-body-input-container'>
-                                <label htmlFor='' className='contact-form-label'>company</label>
+                                <label htmlFor='' className='contact-form-label'>Company</label>
                                 <input className='contact-form-input' type='text' />
                             </div>
                             <div className='contact-form-body-input-container'>
-                                <label htmlFor='' className='contact-form-label'>budget</label>
+                                <label htmlFor='' className='contact-form-label'>Budget</label>
                                 <div className='contact-form-budget-options'>
                                     <label  className='comtact-form-budget-option-label' htmlFor="small">$10K</label>
                                     <input className='contact-form-budget-input' type='radio' name='budget'/>
@@ -47,7 +47,7 @@ const Contact = () => {
                             </div>                            
                         </div>
                         <div className='contact-form-body-input-container'>
-                            <label htmlFor='' className='contact-form-label'>usecase</label>
+                            <label htmlFor='' className='contact-form-label'>Use Case</label>
                             <textarea className='contact-form-textarea' rows='10' cols='40' />
                         </div>    
                     </div>
