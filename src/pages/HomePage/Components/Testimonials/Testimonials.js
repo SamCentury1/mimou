@@ -24,34 +24,52 @@ const testimonialsArray = [
 const Testimonials = () => {
 
 
-    const StarRating = (rating) => {
+
+    const getTestimonial = (item) => {
 
         let ratingArray = []
-        for (let i = 0; i < Math.floor(rating); i ++) {
+        for (let i = 0; i < Math.floor(item.rating); i ++) {
             ratingArray.push('1')
         }
 
-        if (rating - Math.floor(rating) === 0.5) {
+        if (item.rating - Math.floor(item.rating) === 0.5) {
             ratingArray.push('0.5')
         }
 
+
+
         return (
-            <div className='star-rating'>
-                {
-                    ratingArray.map((obj,key) => {
-                        if (obj === '1') {
-                            return (
-                                <TiIcons.TiStar key={key} />
-                            )
-                        } else if (obj === '0.5') {
-                            return (
-                                <TiIcons.TiStarHalf key={key} />
+            <div className='testimonial-card-body'>
+                <div className='testimonial-picture'></div>
+                <div className='testimonial-rating'>
+                    
+                        {
+                            item.rating === 5 ? (
+                                <div className='star-rating'>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                </div >
+                            ) : (
+                                <div className='star-rating'>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStar/>
+                                    <TiIcons.TiStarHalf/>
+                                </div >
                             )
                         }
-                    })
-
-                }
-            </div>
+                    
+                </div>
+                <div className='testimonial-text'>"{item.textBody}"</div>
+                <div className='testimonial-name-container'>
+                    <div className='testimonial-name'>{item.name}</div>
+                    <div className='testimonial-title'>{item.title}</div>
+                </div>
+            </div>    
         )
     }
 
@@ -91,16 +109,20 @@ const Testimonials = () => {
                         testimonialsArray.map((obj, key) => {
                             return (
                                 <SwiperSlide key={key} className='testimonials-card'>
-                                    <div className='testimonial-card-body'>
+                                    {getTestimonial(obj)}
+                                    {/* <div className='testimonial-card-body'>
                                         <div className='testimonial-picture'></div>
-                                        {/* <StarRating rating={obj.rating}/> */}
-                                        <div className='testimonial-rating'>{StarRating(obj.rating)}</div>
+                                        <div className='testimonial-rating'>
+                                            <div className='star-rating'  >
+
+                                            </div >
+                                        </div>
                                         <div className='testimonial-text'>"{obj.textBody}"</div>
                                         <div className='testimonial-name-container'>
                                             <div className='testimonial-name'>{obj.name}</div>
                                             <div className='testimonial-title'>{obj.title}</div>
                                         </div>
-                                    </div>    
+                                    </div>     */}
                                 </SwiperSlide>
                             )
                         })
